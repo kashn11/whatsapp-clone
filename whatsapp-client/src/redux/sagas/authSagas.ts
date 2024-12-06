@@ -43,7 +43,7 @@ function* googleSignIn(payload?: any) {
     process.env.REACT_APP_SERVER_URL as string,
     getAccessToken()
   );
-  yield call(initializedSocket.getActiveSocket);
+  yield call([initializedSocket, initializedSocket.getActiveSocket]);
   //@ts-ignore
   const socket = getActiveSocket();
   if (socket) {
